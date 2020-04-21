@@ -1,0 +1,51 @@
+{
+	"name": "@element-ts/neon",
+	"version": "1.0.0",
+	"description": "A helpful logging package with types, formatting, stacks, and colors.",
+	"keywords": [
+		"log",
+		"console",
+		"color",
+		"error",
+		"type",
+		"message",
+		"stack"
+	],
+	"main": "js/index",
+	"types": "dts/index",
+	"files": [
+		"js",
+		"dts"
+	],
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"prepublishOnly": "npm run compile",
+		"compile": "npm run clean && /usr/local/bin/tsc -p tsconfig.json",
+		"watch": "tsc -w -p .",
+		"clean": "rm -rf js && rm -rf dts",
+		"start": "node js/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/element-ts/neon.git"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"author": "Elijah Cobb <elijah@elijahcobb.com> (https://elijahcobb.com/)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/element-ts/neon/issues"
+	},
+	"homepage": "https://github.com/element-ts/neon#readme",
+	"dependencies": {
+		"colors": "latest"
+	},
+	"devDependencies": {
+		"@types/node": "latest",
+		"typescript": "latest",
+		"tslint": "latest",
+		"jest": "latest",
+		"@types/jest": "latest"
+	}
+}
