@@ -7,13 +7,13 @@
 
 import * as Colors from "colors";
 
-export abstract class Neon {
+export class Neon {
 
-	private static _isEnabled: boolean = false;
-	private static _title: string = "Neon";
-	private static _bufferEncoding: "utf8" | "hex" | "base64" = "hex";
+	private _isEnabled: boolean = false;
+	private _title: string = "Neon";
+	private _bufferEncoding: "utf8" | "hex" | "base64" = "hex";
 
-	private static formatValue(value: any): string {
+	private formatValue(value: any): string {
 
 		if (typeof value === "string") return value;
 		else if (typeof value === "number") return value.toLocaleString();
@@ -30,7 +30,7 @@ export abstract class Neon {
 
 	}
 
-	private static getType(value: any, showType: boolean): string {
+	private getType(value: any, showType: boolean): string {
 
 		if (!showType) return "";
 
@@ -42,7 +42,7 @@ export abstract class Neon {
 		return Colors.gray(retValue + ":\t");
 	}
 
-	public static log(value: any, showType: boolean = true, title: string = this._title): void {
+	public log(value: any, showType: boolean = true, title: string = this._title): void {
 
 		if (!this._isEnabled) return;
 
@@ -51,7 +51,7 @@ export abstract class Neon {
 
 	}
 
-	public static err(value: any, showStack: boolean = false, showType: boolean = true, title: string = this._title): void {
+	public err(value: any, showStack: boolean = false, showType: boolean = true, title: string = this._title): void {
 
 		if (!this._isEnabled) return;
 
@@ -60,11 +60,11 @@ export abstract class Neon {
 
 	}
 
-	public static enable(): void { this._isEnabled = true; }
-	public static disable(): void { this._isEnabled = false; }
-	public static isEnabled(): boolean { return this._isEnabled; }
-	public static setTitle(title: string = "Neon"): void { this._title = title; }
-	public static clearTitle(): void { this.setTitle(); }
-	public static setBufferCoding(coding: "utf8" | "hex" | "base64" = "hex"): void { this._bufferEncoding = coding; }
+	public enable(): void { this._isEnabled = true; }
+	public disable(): void { this._isEnabled = false; }
+	public isEnabled(): boolean { return this._isEnabled; }
+	public setTitle(title: string = "Neon"): void { this._title = title; }
+	public clearTitle(): void { this.setTitle(); }
+	public setBufferCoding(coding: "utf8" | "hex" | "base64" = "hex"): void { this._bufferEncoding = coding; }
 
 }
