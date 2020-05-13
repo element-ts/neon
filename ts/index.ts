@@ -47,7 +47,7 @@ export class Neon {
 		if (!this._isEnabled) return;
 
 		const date: Date = new Date();
-		console.log(Colors.green(Colors.bold(title) + (` (${date.toLocaleTimeString()} @ ${date.getMilliseconds()}ms)`)) + ` ${this.getType(value, showType)}${this.formatValue(value)}`);
+		console.log(Colors.green(Colors.bold(title) + (` (${date.toLocaleTimeString()} @ ${date.getMilliseconds()}ms)`)) + `\t${this.getType(value, showType)}${this.formatValue(value)}`);
 
 	}
 
@@ -56,7 +56,7 @@ export class Neon {
 		if (!this._isEnabled) return;
 
 		const date: Date = new Date();
-		console.error(Colors.red(Colors.bold(title) + (` (${date.toLocaleTimeString()} @ ${date.getMilliseconds()}ms)`)) + ` ${this.getType(value, showType)}${this.formatValue(value)}` + (showStack ? Colors.gray(new Error().stack?.replace("Error", "").replace(RegExp("    at ", "g"), Colors.red(" -> ")) ?? "") : ""));
+		console.error(Colors.red(Colors.bold(title) + (` (${date.toLocaleTimeString()} @ ${date.getMilliseconds()}ms)`)) + `\t${this.getType(value, showType)}${this.formatValue(value)}` + (showStack ? Colors.gray(new Error().stack?.replace("Error", "").replace(RegExp("    at ", "g"), Colors.red(" -> ")) ?? "") : ""));
 
 	}
 
