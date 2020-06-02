@@ -1,6 +1,6 @@
 {
   "name": "@element-ts/neon",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A helpful logging package with types, formatting, stacks, and colors.",
   "keywords": [
     "log",
